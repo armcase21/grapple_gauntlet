@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bwoxgm4sbqgxx"]
+
+[ext_resource type="Script" uid="uid://dtf85wwg7ubpk" path="res://scripts/Grappleable.gd" id="1_d73vv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d73vv"]
+bounce = 0.6
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ja1hk"]
+radius = 16.0
+
+[node name="Ball" type="RigidBody2D" unique_id=198136832 groups=["ball"]]
+physics_material_override = SubResource("PhysicsMaterial_d73vv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1957513162]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.298039, 0.137255, 0.0509804, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=197064818]
+shape = SubResource("CircleShape2D_ja1hk")
+
+[node name="Grappleable" type="Node" parent="." unique_id=1065075772]
+script = ExtResource("1_d73vv")
+mass_value = 0.5
+metadata/_custom_type_script = "uid://dtf85wwg7ubpk"

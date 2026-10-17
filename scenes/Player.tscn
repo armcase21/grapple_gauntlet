@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b8ecsgcnxljxe"]
+
+[ext_resource type="Script" uid="uid://rilj0aywdp3h" path="res://scripts/Player.gd" id="1_dqkch"]
+[ext_resource type="Script" uid="uid://b66h64s54iq23" path="res://scripts/PlayerInput.gd" id="2_qlg0r"]
+[ext_resource type="Script" uid="uid://dtf85wwg7ubpk" path="res://scripts/Grappleable.gd" id="3_tuyoq"]
+[ext_resource type="Script" uid="uid://c113y5ivwpeay" path="res://scripts/Grapple.gd" id="4_mdl7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(29, 45)
+
+[node name="Player" type="CharacterBody2D" unique_id=582828086]
+platform_on_leave = 2
+script = ExtResource("1_dqkch")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=318713057]
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 24.0
+color = Color(0.484492, 0.685515, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1665720024]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="PlayerInput" type="Node2D" parent="." unique_id=1063636739]
+script = ExtResource("2_qlg0r")
+
+[node name="Grappleable" type="Node" parent="." unique_id=638212002]
+script = ExtResource("3_tuyoq")
+
+[node name="Grapple" type="Node2D" parent="." unique_id=1264324020]
+script = ExtResource("4_mdl7e")

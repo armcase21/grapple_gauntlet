@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dpd6wuab5yyq8"]
+
+[ext_resource type="Script" uid="uid://dtf85wwg7ubpk" path="res://scripts/Grappleable.gd" id="1_jnwe4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnwe4"]
+size = Vector2(46, 47)
+
+[node name="Crate" type="RigidBody2D" unique_id=891841147]
+mass = 5.0
+lock_rotation = true
+
+[node name="Grappleable" type="Node" parent="." unique_id=125502888]
+script = ExtResource("1_jnwe4")
+metadata/_custom_type_script = "uid://dtf85wwg7ubpk"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2060018029]
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 32.0
+offset_bottom = 31.0
+color = Color(0.501961, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=462795554]
+position = Vector2(8, 7.5)
+shape = SubResource("RectangleShape2D_jnwe4")
